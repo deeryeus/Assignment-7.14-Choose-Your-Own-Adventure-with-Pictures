@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ title }}</h1> <!--from tuple in app.py-->
+
+        <p>{{ text }}</p> <!--from tuple in app.py-->
+
+        <img src="{{ img_url }}">
+        
+        {% if choices %}
+
+            <p>What do you do?</p>
+
+            <ul>
+                {% for (page_name, choice) in choices %}
+                <li>
+                    <a href="{{ url_for(page_name) }}">{{choice}}</a> <!--flask.url_for(endpoint, **values) generates a URL to the given endpoint with the method provided-->
+                </li>
+                
+                {% endfor %}
+            </ul>
+
+        {% else %}
+            
+            <p>THE END.</p>
+
+
+            <p><a href="{{ url_for('start') }}">Play again.</a></p>
+
+        {% endif %}
+
+    </div>
+</body>
+
+</html>

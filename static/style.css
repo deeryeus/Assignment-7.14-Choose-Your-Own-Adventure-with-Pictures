@@ -1,0 +1,23 @@
+body {
+    background-color: #56775d;
+    color: rgb(15, 66, 36);
+    font-family: Arial;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p, a {
+    font-size: 30px;
+}
+
+a {
+    color: rgb(38, 0, 177);
+    font-weight: bold;
+}
+
+.container {
+    max-width: 800px;
+    margin: 100px auto;
+}
